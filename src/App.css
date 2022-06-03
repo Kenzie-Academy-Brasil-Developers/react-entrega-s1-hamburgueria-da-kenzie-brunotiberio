@@ -58,14 +58,14 @@ table {
 @media screen and (min-width: 1024px){
     .main{
         margin-top: 8px;
-        margin-right: 20px;
+        margin-right: 150px;
         
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
 
-		max-width: 1519px;
+		max-width: 100%;
     }
 
 } 

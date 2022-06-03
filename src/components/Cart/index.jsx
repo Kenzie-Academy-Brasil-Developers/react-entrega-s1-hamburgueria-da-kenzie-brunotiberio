@@ -2,9 +2,7 @@ import CartProduct from "../CartProduct"
 import CartTotal from "../CartTotal"
 import '../Cart/index.css'
 
-function Cart({currentSale, deletarItem , setCurrentSale }){
-
-    console.log(currentSale)
+function Cart({currentSale, deletarItem , setCurrentSale, products }){
 
         return (        
             <>
@@ -27,20 +25,18 @@ function Cart({currentSale, deletarItem , setCurrentSale }){
                         : 
                         
                         (
-                            currentSale.map((sale) => <CartProduct img={sale.img} name={sale.name} category={sale.category} id={sale.id} key={sale.id} deletarItem={deletarItem} setCurrentSale={setCurrentSale}/>)
+                            currentSale.map((sale) => <CartProduct products={products} img={sale.img} name={sale.name} category={sale.category} id={sale.id} key={sale.id} deletarItem={deletarItem} setCurrentSale={setCurrentSale}/>)
                         )
                             
                         }
                         
                     </ul>
-                        {currentSale.length !== 0 && (<CartTotal currentSale={currentSale} setCurrentSale={setCurrentSale}/> )}
+                        {currentSale.length !== 0 && (<CartTotal currentSale={currentSale} setCurrentSale={setCurrentSale}/>)}
                                             
                 </div>
          
             </>
         )
-    
-
 
 }
 

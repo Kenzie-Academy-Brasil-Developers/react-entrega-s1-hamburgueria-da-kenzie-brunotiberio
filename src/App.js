@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import './App.css';
 import Cart from './components/Cart';
 import { api } from './components/data/api';
@@ -16,8 +17,6 @@ function App() {
 
   const [currentSale, setCurrentSale] = useState([])
 
-  const [filteredProducts, setFilteredProducts] = useState([]);
-
   useEffect(() => {
     api.get('products')
     .then((response) => {
@@ -25,12 +24,6 @@ function App() {
     })
   }, [])
 
-
-  function showProducts(pesquisaItem){
-    products.filter((product) => {
-      return product.name === pesquisaItem || product.category === pesquisaItem
-    })     
-  }
 
   function deletarItem(id){
     const removeItens = currentSale.filter((item) => {
@@ -42,23 +35,31 @@ function App() {
     
 
   function handleClick(productId){
-    const adicionarCurrentSale = products.find((id) => {
-      return id.id === productId
+    const adicionarCurrentSale = products.find((product) => {
+      return product.id === productId   
+    })
+    
+    const produtoIgual = currentSale.find((sale) => {
+      return sale.id === productId
     })
 
-    setCurrentSale([...currentSale,adicionarCurrentSale])
+    if(!produtoIgual){
+      toast.info('Produto adicionado ao carrinho')
+      setCurrentSale([...currentSale,adicionarCurrentSale])
+    } else {
+        toast.info('Adicione um produto diferente')
+    } 
   }
-
 
   return (
    <>
       <Header>
         <Logo />
-        <InputSearch showProducts={showProducts} setFilteredProducts={setFilteredProducts} filteredProducts={filteredProducts}/>
+        <InputSearch products={products} setProducts={setProducts}/>
       </Header>
       <main className='main'>
         <ProductList products={products} handleClick={handleClick} />  
-        <Cart currentSale={currentSale} deletarItem={deletarItem} setCurrentSale={setCurrentSale}/>
+        <Cart products={products} currentSale={currentSale} deletarItem={deletarItem} setCurrentSale={setCurrentSale} />
       </main>
    </>
   );

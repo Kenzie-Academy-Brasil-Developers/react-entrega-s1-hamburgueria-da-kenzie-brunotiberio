@@ -10,6 +10,23 @@
 @media screen and (min-width: 1024px){
     .container-products{
         max-width: 940px;
+        height: 740px;
+
+        display: flex;
+        overflow: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        margin-left: 137px;
+    }
+
+}
+
+@media screen and (min-width: 1324px){
+    .container-products{
+        max-width: 940px;
+        height: auto;
 
         display: flex;
         overflow: hidden;
