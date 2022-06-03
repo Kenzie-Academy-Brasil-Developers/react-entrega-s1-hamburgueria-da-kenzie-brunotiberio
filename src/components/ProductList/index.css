@@ -1,0 +1,23 @@
+.container-products{
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+
+    overflow: auto;    
+}
+
+@media screen and (min-width: 1024px){
+    .container-products{
+        max-width: 940px;
+
+        display: flex;
+        overflow: hidden;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        margin-left: 137px;
+    }
+
+}

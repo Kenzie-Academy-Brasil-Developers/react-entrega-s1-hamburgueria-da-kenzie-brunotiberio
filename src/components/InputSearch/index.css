@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.input-container{
+    max-width: 332px;
+    height: 60px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    background: #FFFFFF;
+    color: #E0E0E0;
+    border: 2px solid #E0E0E0;
+    border-radius: 8px;
+
+    margin-bottom: 1rem;
+}
+
+.input-container:hover{
+    border: 2px solid black;
+}
+
+.input-text{
+    margin-left: 5px;
+     
+    width: 350px;
+    height: 50px;
+
+    box-sizing: border-box;
+
+    background: #FFFFFF;
+    color: #E0E0E0;
+    border: none;
+    box-shadow: none;   
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.input-text:focus{
+    outline: none;
+}
+
+.input-submit{
+
+    margin-right: 10px;    
+    
+    border: 2px solid #27AE60;
+    border-radius: 8px;
+    background: #27AE60;
+    color: #FFFFFF;
+
+    width: 107px;
+    height: 40px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+
+    cursor: pointer;
+}
+
+@media screen and (min-width: 1024px){
+    .input-container{
+        margin-right: 150px;
+        margin-top: 15px;
+    }
+
+}
+
