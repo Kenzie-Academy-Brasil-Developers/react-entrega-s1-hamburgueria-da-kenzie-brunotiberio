@@ -70,6 +70,13 @@
     height: 60px;
 
     margin-bottom: 30px;
+
+    cursor: pointer;
+}
+
+.remove-all:hover{
+    filter: brightness(.8);
+
 }
 
 @media screen and (min-width: 1024px){

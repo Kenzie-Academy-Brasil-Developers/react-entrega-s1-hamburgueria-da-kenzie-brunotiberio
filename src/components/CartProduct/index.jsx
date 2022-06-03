@@ -8,7 +8,7 @@ function CartProduct({ img, name, category, id, deletarItem, products }){
             <div className='cart-img-container'>
                 <img className='cart-img' src={img} alt={name} />
             </div>
-            <div className='cart-name'>
+            <div className='cart-name-container'>
                 <h3 className='cart-name'>{name}</h3>
                 <p className='cart-category'>{category}</p>
             </div>

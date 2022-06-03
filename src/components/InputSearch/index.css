@@ -65,6 +65,10 @@
     cursor: pointer;
 }
 
+.input-submit:hover{
+    filter: brightness(.8);
+}
+
 @media screen and (min-width: 1024px){
     .input-container{
         margin-right: 150px;
