@@ -44,10 +44,10 @@ function App() {
     })
 
     if(!produtoIgual){
-      toast.info('Produto adicionado ao carrinho')
+      toast.success('Produto adicionado ao carrinho')
       setCurrentSale([...currentSale,adicionarCurrentSale])
     } else {
-        toast.info('Adicione um produto diferente')
+        toast.error('Adicione um produto diferente')
     } 
   }
 
